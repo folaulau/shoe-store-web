@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Products extends Component {
+class CustomerSignup extends Component {
 
     constructor(props) {
         super(props);
@@ -11,16 +11,16 @@ class Products extends Component {
 
     render() {
         return (
-          <div className="container">
+            <div className="container">
                 <div className="row">
                 <div className="col-sm">
                     
                 </div>
                 <div className="col-sm">
-                    Products
+                Customer Signup
                 </div>
                 <div className="col-sm">
-                   
+                    
                 </div>
                 </div>
             </div>
@@ -28,4 +28,4 @@ class Products extends Component {
     }
 }
 
-export default Products;
+export default CustomerSignup;

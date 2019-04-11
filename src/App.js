@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import logo from './logo.svg';
+
 import './App.css';
 import Customers from './components/Customers';
 import Products from './components/Products';
 import Users from './components/Users';
+import UserCreate from './components/UserCreate';
+import UserRead from './components/UserRead';
+import UserUpdate from './components/UserUpdate';
 import Home from './components/Home';
+
 
 class App extends Component {
 
@@ -13,24 +17,24 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> 
-            <a class="navbar-brand" href="/">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-sm bg-dark navbar-dark"> 
+            <a className="navbar-brand" href="/">Navbar</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <Link class="nav-link" to="/">Home</Link>
+            <div className="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">Home</Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/admin/products/">Products</Link>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/products/">Products</Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/admin/customers/">Customers</Link>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/customers/">Customers</Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/admin/users/">Users</Link>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/users/">Users</Link>
                 </li>
               </ul>
             </div> 
@@ -40,6 +44,9 @@ class App extends Component {
           <Route path="/admin/customers/" component={Customers} />
           <Route path="/admin/products/" component={Products} />
           <Route path="/admin/users/" component={Users} />
+          <Route path="/admin/users-add" component={UserCreate} />
+          <Route path="/admin/users-read/:uid" component={UserRead} />
+          <Route path="/admin/users-update/:uid" component={UserUpdate} />
         </div>
       </Router>
     );

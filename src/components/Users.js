@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
+import { Table } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+function Home() {
+    return (
+      <div>
+        <h2>Home</h2>
+      </div>
+    );
+  }
 
 class Users extends Component {
 
@@ -7,22 +16,55 @@ class Users extends Component {
         super(props);
         this.state = {
         }
+
+        this.addUser = this.addUser.bind(this);
     }
+
+    addUser(e) {
+        e.preventDefault();
+        console.log('The link was clicked.');
+        this.props.history.push('/admin/users-add/:uid');
+    }
+
+    
 
     render() {
         return (
-          <div class="container">
-                <div class="row">
-                <div class="col-sm">
+            <div className="container">
+                <br/>
+                <div className="row">
+                    <div className="col-sm-11">
+                    </div>
+                    <div className="col-sm-1">
+                        <button type="button" className="btn btn-outline-primary" onClick={this.addUser}>Add</button>
+                    </div>
+                </div>
+                <br/>
+                <Table responsive="sm">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Roles</th>
+                    <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>1</td>
+                    <td>Folau</td>
+                    <td>Kaveinga</td>
+                    <td>folaukaveinga@gmail.com</td>
+                    <td>3109934731</td>
+                    <td>USER,ADMIN,MANAGER</td>
+                    <td>4849 w 111th street, Inglewood, CA, 90304</td>
+                    </tr>
                     
-                </div>
-                <div class="col-sm">
-                    Users
-                </div>
-                <div class="col-sm">
-                    
-                </div>
-                </div>
+                </tbody>
+                </Table>
             </div>
         )
     }
