@@ -8,6 +8,7 @@ import Users from './components/Users';
 import UserCreate from './components/UserCreate';
 import UserRead from './components/UserRead';
 import UserUpdate from './components/UserUpdate';
+import UserLogin from './components/UserLogin';
 import Home from './components/Home';
 
 
@@ -47,6 +48,7 @@ class App extends Component {
           <Route path="/admin/users-add" component={UserCreate} />
           <Route path="/admin/users-read/:uid" component={UserRead} />
           <Route path="/admin/users-update/:uid" component={UserUpdate} />
+          <Route path="/admin/login" component={UserLogin} />
         </div>
       </Router>
     );

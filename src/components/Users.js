@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-function Home() {
-    return (
-      <div>
-        <h2>Home</h2>
-      </div>
-    );
-  }
-
 class Users extends Component {
 
     constructor(props) {
@@ -54,7 +46,7 @@ class Users extends Component {
                 </thead>
                 <tbody>
                     <tr>
-                    <td>1</td>
+                    <td><Link to="/admin/users-update/:uid">1</Link></td>
                     <td>Folau</td>
                     <td>Kaveinga</td>
                     <td>folaukaveinga@gmail.com</td>
